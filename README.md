@@ -4,6 +4,11 @@
 Project details: 
 * New feature updates for Cornerstone theme on BigCommerce
 
+Features added:
+- Add all to cart button in category page 
+- Remove all from cart button in category page 
+- User information banner if they are logged in on category page
+
 ### Stencil Utils
 [Stencil-utils](https://github.com/bigcommerce/stencil-utils) is our supporting library for our events and remote interactions.
 
