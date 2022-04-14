@@ -17,6 +17,7 @@ category:
 
 {{#partial "page"}}
 
+
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 {{#if category.image}}
     {{> components/common/responsive-img
@@ -26,10 +27,26 @@ category:
         class="category-header-image"
     }}
 {{/if}}
+
+<div id="form--add-all-to-cart-user-message" >
+
+</div>
+
 {{#unless theme_settings.hide_category_page_heading }}
     <h1 class="page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
 {{/unless}}
+
+
+<div class="page-heading" >
+    <button id="form-action-addToCart" class="button button--primary add-all-to-cart" >
+        Add all products from category
+    </button>
+
+    <button id="form-action-removeFromCart" class="button button--primary remove-all-from-cart" >
+        Remove all products from category
+    </button>
+</div>
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
@@ -42,7 +59,7 @@ category:
         </aside>
     {{else if category.shop_by_price}}
         {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
+                <aside class="page-sidebar" id="faceted-search-container">
                 {{> components/category/sidebar}}
             </aside>
         {{/if}}
@@ -53,6 +70,23 @@ category:
         {{{region name="category_below_content"}}}
     </div>
 </div>
+
+<!-- 
+<script>
+    
+    document.querySelectorAll(".add-all-to-cart").forEach(element => {
+        element.addEventListener("click", function() {
+            const formClass = ".form--add-all-to-cart";
+
+            document.querySelectorAll(formClass).forEach(formElement => {
+                console.log("This is the element", formElement);
+                formElement.submit();
+            });
+
+        });
+    });
+</script> -->
+
 
 {{/partial}}
 {{> layout/base}}

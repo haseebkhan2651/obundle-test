@@ -77,12 +77,18 @@
         </a>
 
         <figcaption class="card-figcaption">
-            <di class="card-figcaption-body">
-             
-                <img 
-                class="card-image"
-                src="https://images.unsplash.com/photo-1649716729305-19f86b8bff9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80" 
-                >
+            <div class="card-figcaption-body">
+                <!-- TODO: Make this part of the code below use the secondary image -->
+                {{> components/common/responsive-img
+                    image=image
+                    class="card-image"
+                    fallback_size=theme_settings.productgallery_size
+                    lazyload=theme_settings.lazyload_mode
+                    default_image=theme_settings.default_image_product
+                }}
+
+                <!-- TODO: Make proper if/else statements etc. -->
+            
 
                     <!-- {{#unless hide_product_quick_view}}
                         {{#if theme_settings.show_product_quick_view}}

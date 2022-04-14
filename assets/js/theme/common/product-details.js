@@ -25,6 +25,8 @@ export default class ProductDetails extends ProductDetailsBase {
         this.swatchGroupIdList = $('[id^="swatchGroup"]').map((_, group) => $(group).attr('id'));
         this.storeInitMessagesForSwatches();
 
+        // Adding event listener to all "Add all to cart buttons for categories"
+
         const $form = $('form[data-cart-item-add]', $scope);
 
         this.addToCartValidator = nod({
@@ -100,6 +102,7 @@ export default class ProductDetails extends ProductDetailsBase {
 
         this.previewModal = modalFactory('#previewModal')[0];
     }
+
 
     registerAddToCartValidation() {
         this.addToCartValidator.add([{
@@ -378,6 +381,7 @@ export default class ProductDetails extends ProductDetailsBase {
      * Add a product to cart
      *
      */
+    // TODO: Update the add product to cart button
     addProductToCart(event, form) {
         const $addToCartBtn = $('#form-action-addToCart', $(event.target));
         const originalBtnVal = $addToCartBtn.val();
