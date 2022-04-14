@@ -381,7 +381,6 @@ export default class ProductDetails extends ProductDetailsBase {
      * Add a product to cart
      *
      */
-    // TODO: Update the add product to cart button
     addProductToCart(event, form) {
         const $addToCartBtn = $('#form-action-addToCart', $(event.target));
         const originalBtnVal = $addToCartBtn.val();

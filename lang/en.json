@@ -1,4 +1,8 @@
 {
+    "globals": {
+        "add_all_to_cart": "Add all to cart",
+        "remove_all_from_cart": "Remove all from cart"
+    },
     "header": {
         "welcome_back": "Welcome back, {name}",
         "skip_to_main": "Skip to main content"
