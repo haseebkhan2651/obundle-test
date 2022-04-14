@@ -28,6 +28,15 @@ category:
     }}
 {{/if}}
 
+{{#if customer}}
+    <div>
+        Your information: 
+            Name: {{ customer.name }} <br>
+            Email: {{ customer.email }} <br>
+            Number: {{ customer.phone }}
+    </div>
+{{/if}}
+
 <div id="form--add-all-to-cart-user-message" >
 
 </div>

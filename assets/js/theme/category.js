@@ -27,7 +27,8 @@ export default class Category extends CatalogPage {
         }
 
         $('a.navList-action').on('click', () => this.setLiveRegionAttributes($('span.price-filter-message'), 'status', 'assertive'));
-    }
+    };
+
 
     
     onReady() {
