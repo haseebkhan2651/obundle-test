@@ -6,24 +6,8 @@
     {{#each products}}
 
     <form data-product-id="{{ this.id }}" class="form form--add-all-to-cart" method="post" action="{{ this.add_to_cart_url }}" enctype="multipart/form-data" data-cart-item-add >
-        <!-- <input
-            type="hidden"
-            value="Add to cart"
-            class="button button--primary"
-            id="form-action-addToCart"
-        >
-        <input 
-            type="hidden" 
-            name="action"
-            value="add"
-        >
-        <input
-            type="hidden"
-            name="product_id"
-            value="{{ this.id }}"
-        > -->
         <li class="product">
-                {{>components/products/card settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+                {{>components/products/card product=this settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
         </li>
     </form>
     {{/each}}

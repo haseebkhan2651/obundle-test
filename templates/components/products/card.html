@@ -65,6 +65,7 @@
            aria-label="{{> components/products/product-info}}"
            {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
         >
+
             <div class="card-img-container">
                 {{> components/common/responsive-img
                     image=image
@@ -78,49 +79,16 @@
 
         <figcaption class="card-figcaption">
             <div class="card-figcaption-body">
-                <!-- TODO: Make this part of the code below use the secondary image -->
-                {{> components/common/responsive-img
-                    image=image
-                    class="card-image"
-                    fallback_size=theme_settings.productgallery_size
-                    lazyload=theme_settings.lazyload_mode
-                    default_image=theme_settings.default_image_product
-                }}
 
-                <!-- TODO: Make proper if/else statements etc. -->
+                    {{> components/common/responsive-img
+                        image=product.images.[0]
+                        class="card-image"
+                        fallback_size=theme_settings.productgallery_size
+                        lazyload=theme_settings.lazyload_mode
+                        default_image=theme_settings.default_image_product
+                    }}
             
 
-                    <!-- {{#unless hide_product_quick_view}}
-                        {{#if theme_settings.show_product_quick_view}}
-                            {{#if settings.data_tag_enabled}}
-                                <button type="button" class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}</button>
-                            {{else}}
-                                <button type="button" class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}</button>
-                            {{/if}}
-                        {{/if}}
-                    {{/unless}}
-                    {{#if show_compare}}
-                        <label class="button button--small card-figcaption-button" for="compare-{{id}}">
-                            {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
-                        </label>
-                    {{/if}}
-                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                        {{#if show_cart_action}}
-                            {{#if has_options}}
-                                <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
-                            {{/if}}
-                            {{#if pre_order}}
-                                <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button">{{lang 'products.pre_order'}}</a>
-                            {{/if}}
-                            {{#if add_to_cart_url }}
-                                <a href="{{add_to_cart_url}}" data-event-type="product-click" data-button-type="add-cart" class="button button--small card-figcaption-button">{{lang 'products.add_to_cart'}}</a>
-                                <span class="product-status-message aria-description--hidden">{{lang 'category.add_cart_announcement'}}</span>
-                            {{/if}}
-                            {{#if out_of_stock_message }}
-                                <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{out_of_stock_message}}</a>
-                            {{/if}}
-                        {{/if}}
-                    {{/or}} -->
             </div>
         </figcaption>
     </figure>
